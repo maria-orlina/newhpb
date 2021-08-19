@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import pickle
-import sklearn
 import numpy as np
 # load the saved model
 pickle_in = open("forest_model1.pkl", "rb")
@@ -9,7 +8,7 @@ model = pickle.load(pickle_in)
 
 
 def run():
-    img1 = Image.open('Billboard.jpeg')
+    img1 = Image.open('Billboard_Hot_100.jpeg')
     img1 = img1.resize((200, 145))
     st.image(img1, use_column_width=False)
     st.title("BillBoard Hit Predictor")
